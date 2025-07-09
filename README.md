@@ -12,7 +12,7 @@ I included 100+ real user question variations for robust coverage. The UI is cle
 
 ---
 
-##Key Features
+## Key Features
 
 - Universal FAQ matching: Works with a customizable CSV knowledge base
 
