@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Customer Service Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Inter font for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="chat-container">
+    <h1>Customer Service Bot</h1>
+    <div class="sub">Ask anything from our FAQ.<br>Your privacy is always protected.</div>
+    <form method="POST" autocomplete="off">
+        <input type="text" name="question" placeholder="Type your question here..." required value="{{ question|default('') }}">
+        <button type="submit">Ask</button>
+    </form>
+    {% if answer %}
+        <div class="answer"><strong>Answer:</strong> {{ answer }}</div>
+    {% endif %}
+    <div class="upload">
+        <form action="/upload_kb" method="post" enctype="multipart/form-data">
+            <label>Replace FAQ (CSV): </label>
+            <input type="file" name="file" accept=".csv" required>
+            <button type="submit" style="margin-top:8px;">Upload</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
