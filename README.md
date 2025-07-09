@@ -41,7 +41,7 @@ That’s it. No external APIs or paid services needed.
 
 ## Universal Usage & Custom Data
 
-You can use this script for any company, FAQ, or info domain—just change the CSV.
+You can use this script for any company, FAQ, or info domain, just change the CSV.
 Examples
 
 Start the server locally:
