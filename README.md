@@ -78,7 +78,8 @@ The app will:
 
 - Match even messy/natural questions to the right answer
 
-- Let you upload a new FAQ (CSV) from the web UI
+- Let you upload a new FAQ (CSV) from the web UI, with validation to ensure only valid CSV files are accepted
+and the previous knowledge base stays active if an upload fails
 
 ---
 
@@ -116,4 +117,4 @@ Some ideas for future versions:
 
 ---
 
-Ian Angel, 2024
+Yan Angel, 2024
