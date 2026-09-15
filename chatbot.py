@@ -44,5 +44,16 @@ class FAQChatbot:
         return self.kb.iloc[best_idx]["answer"]
 
     def reload_kb(self, new_kb_path):
-        self.kb_path = new_kb_path
-        self.load_kb()
+        #Keep the old path/kb around in case the new one fails to load,
+        #so a bad upload doesn't leave the bot with no working knowledge base
+        old_kb_path = self.kb_path
+        old_kb = self.kb
+        old_q_embeddings = self.q_embeddings
+        try:
+            self.kb_path = new_kb_path
+            self.load_kb()
+        except Exception:
+            self.kb_path = old_kb_path
+            self.kb = old_kb
+            self.q_embeddings = old_q_embeddings
+            raise
